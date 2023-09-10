@@ -36,7 +36,7 @@ class MyController {
 
         // Get the current day of the week
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        String dayOfWeek = new SimpleDateFormat("EEEE").format(calendar.getTime());
+        String currentDay = new SimpleDateFormat("EEEE").format(calendar.getTime());
 
         // Get the current UTC time
         String currentTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(calendar.getTime());
@@ -44,7 +44,7 @@ class MyController {
         // Construct the response JSON
         Map<String, Object> response = new HashMap<>();
         response.put("slack_name", slackName);
-        response.put("current_day", dayOfWeek);
+        response.put("current_day", currentDay);
         response.put("utc_time", currentTime);
         response.put("track", track);
         response.put("github_file_url", "https://github.com/nikitadjadhav31/hng/blob/main/BackendStageTask1Application.java");
